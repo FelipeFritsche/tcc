@@ -15,6 +15,9 @@ class Atividade extends CI_Controller {
     {
         if($this->input->post()){
             $this->load->model('atividade_model', 'atividade');
+            $this->atividade->id = 1;
+            $this->atividade->idevento = 1;
+            $this->atividade->idevento = 0;
             $this->atividade->nome = $this->input->post('nome');
             $this->atividade->tipo = $this->input->post('tipo');
             $this->atividade->titulo = $this->input->post('titulo');
@@ -27,7 +30,7 @@ class Atividade extends CI_Controller {
             $this->atividade->descricao = $this->input->post('descricao');
             
             
-            if($this->usuario->inserir()){
+            if($this->atividade->inserir()){
                 echo 'Atividade salva com sucesso!';
             }
             else{
@@ -36,6 +39,7 @@ class Atividade extends CI_Controller {
         }
         $data['titulo'] = "Atividade";
         $this->template->load('template','atividade/view_atividade',$data);
+        
     }
         public function consulta(){
         $data['titulo'] = "Evento";

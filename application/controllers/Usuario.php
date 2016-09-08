@@ -29,6 +29,6 @@ class Usuario extends CI_Controller {
                 echo 'Erro ao salvar usuário';
             }
         }
-        $this->load->view('view_cadastro');        
+        $this->load->view('usuario/view_usuario');        
     }
 }

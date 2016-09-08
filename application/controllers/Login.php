@@ -15,8 +15,7 @@ class Login extends CI_Controller {
             $this->load->model('Usuario_model', 'usuario');
             $this->usuario->usuario = $this->input->post('usuario');
             $this->usuario->senha = $this->input->post('senha');
-            
-            if($this->usuario->login($this->usuario->usuario,$this->usuario->senha)){
+            if($this->usuario->login($this->input->post('usuario'),$this->input->post('senha'))){
                 echo 'Evento salvo com sucesso!';
             }
             else{

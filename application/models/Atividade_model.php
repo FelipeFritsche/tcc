@@ -3,6 +3,8 @@
 class Atividade_model extends CI_Model {
     
     public $id;
+    public $idevento;
+    public $idpalestrante;
     public $nome;
     public $titulo;
     public $tipo;
