@@ -31,7 +31,7 @@ class Atividade extends CI_Controller {
             
             
             if($this->atividade->inserir()){
-                echo 'Atividade salva com sucesso!';
+                echo 'Atividade salva com sucesso!!!';
             }
             else{
                 echo 'Erro ao salvar atividade';
