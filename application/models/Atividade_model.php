@@ -1,7 +1,7 @@
 <?php
 
 class Atividade_model extends CI_Model {
-    
+
     public $id;
     public $idevento;
     public $idpalestrante;
@@ -16,29 +16,27 @@ class Atividade_model extends CI_Model {
     public $limiteVagas;
     public $descricao;
     public $facilitador;
-    
-    public function __construct() 
-    {
+
+    public function __construct() {
         parent::__construct();
     }
-    
-    public function inserir()
-    {
+
+    public function inserir() {
         return $this->db->insert('atividade', $this);
     }
-    
+
     public function auto_increment() {
-//        $query = $this->db->select('max(id)')
-//                  ->from('atividade')
-//                  ->get();
+        $this->db->select_max('id');
+        $query = $this->db->get('atividade');
     }
+
     public function get_atividades() {
-         $query = $this->db->get('atividade');
+        $query = $this->db->get('atividade');
         return $query->result();
     }
-    
-    function row_delete($id) {    
-    $this->db->where('id', $id);   
-    $this->db->delete('atividade');
-}
+
+    function row_delete($id) {
+        $this->db->delete('atividade', array('id' => $id));
+    }
+
 }

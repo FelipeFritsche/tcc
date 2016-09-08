@@ -37,13 +37,9 @@ class Atividade extends CI_Controller {
         }
         $data['titulo'] = "Atividade";
         $this->template->load('template', 'atividade/view_atividade', $data);
-        
-        $this->load->model('atividade_model', 'atividade');
-        $this->atividade->autoIncrement();
     }
-
     
-    public function get_atividades() {
+    public function listar() {
         $data['titulo'] = "Evento";
         $this->template->load('template', 'atividade/consultar_atividade', $data);
     }

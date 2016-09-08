@@ -35,7 +35,7 @@ class Evento extends CI_Controller {
         
         $this->template->load('template', 'evento/criar_evento', $data);        
     }
-    public function list_eventos() {
+    public function listar() {
         $data['titulo'] = "Atividades";
         $this->template->load('template', 'evento/consultar_atividade', $data);
     }   

@@ -24,12 +24,4 @@ class Login extends CI_Controller {
         }
         $this->load->view('login');
     }
-    
-    
-    public function hello()
-    {
-        $data['titulo'] = 'Hello';
-        $data['mensagem'] = "Sou o action hello e estou no template 'template.php'";
-        $this->template->load('template', 'view_hello', $data);
-    }    
 }

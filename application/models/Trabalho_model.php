@@ -13,6 +13,7 @@ class Trabalho_model extends CI_Model {
     public $modalidade;
     public $areaTematica;
     public $avalidador;
+    public $arquivo;
     
     public function __construct() 
     {
@@ -27,6 +28,10 @@ class Trabalho_model extends CI_Model {
     public function excluir($id)
     {
         return $this->db->delete('trabalho', array('id' => $id));
+    }
+    
+    function row_delete($id) {
+        $this->db->delete('trabalho', array('id' => $id));
     }
     
 }

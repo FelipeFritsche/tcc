@@ -22,7 +22,7 @@ class Trabalho extends CI_Controller {
             $this->trabalho->areaTematica = $this->input->post('endereco');
             $this->trabalho->avaliador = $this->input->post('nome');
             
-            if($this->usuario->inserir()){
+            if($this->trabalho->inserir()){
                 echo 'Trabalho salvo com sucesso!';
             }
             else{

@@ -26,9 +26,8 @@ class Evento_model extends CI_Model {
     }
 
     public function auto_increment() {
-//        $query = $this->db->select('max(id)')
-//                  ->from('atividade')
-//                  ->get();
+    $this->db->select_max('id');
+    $query = $this->db->get('evento');
     }
 
     public function get_atividades() {
@@ -37,8 +36,7 @@ class Evento_model extends CI_Model {
     }
 
     function row_delete($id) {
-        $this->db->where('id', $id);
-        $this->db->delete('evento');
+        $this->db->delete('evento', array('id' => $id)); 
     }
 
 }

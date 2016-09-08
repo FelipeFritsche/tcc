@@ -36,8 +36,8 @@ class Usuario_model extends CI_Model {
         $query = $this->db->get();
 
         if ($query->num_rows() == 1) {
-            $data['titulo'] = "Evento";
-        $this->load->view('atividade/consultar_atividade', $data);
+            $data['titulo'] = "Usuario";
+        $this->load->view('usuario/consultar_usuario', $data);
             return $query->result();
         } else {
             $data['titulo'] = "Evento";
@@ -47,4 +47,13 @@ class Usuario_model extends CI_Model {
         }
     }
 
+    public function get_usuarios() {
+        $query = $this->db->get('usuario');
+        return $query->result();
+    }
+
+    public function auto_increment() {
+        $this->db->select_max('id');
+        $query = $this->db->get('usuario');
+    }
 }
