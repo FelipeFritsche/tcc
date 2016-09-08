@@ -27,4 +27,18 @@ class Atividade_model extends CI_Model {
         return $this->db->insert('atividade', $this);
     }
     
+    public function auto_increment() {
+//        $query = $this->db->select('max(id)')
+//                  ->from('atividade')
+//                  ->get();
+    }
+    public function get_atividades() {
+         $query = $this->db->get('atividade');
+        return $query->result();
+    }
+    
+    function row_delete($id) {    
+    $this->db->where('id', $id);   
+    $this->db->delete('atividade');
+}
 }

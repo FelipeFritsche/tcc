@@ -1,21 +1,21 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 class Atividade extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
     }
-    
-    public function index()
-    {
-        if($this->input->post()){
+
+    public function index() {
+        if ($this->input->post()) {
             $this->load->model('atividade_model', 'atividade');
-            $this->atividade->id = 1;
+            $this->atividade->id = 2;
             $this->atividade->idevento = 1;
             $this->atividade->idevento = 0;
             $this->atividade->nome = $this->input->post('nome');
@@ -28,21 +28,26 @@ class Atividade extends CI_Controller {
             $this->atividade->cargaHoraria = $this->input->post('cargaHoraria');
             $this->atividade->limiteVagas = $this->input->post('limiteVagas');
             $this->atividade->descricao = $this->input->post('descricao');
-            
-            
-            if($this->atividade->inserir()){
+
+            if ($this->atividade->inserir()) {
                 echo 'Atividade salva com sucesso!!!';
-            }
-            else{
+            } else {
                 echo 'Erro ao salvar atividade';
             }
         }
         $data['titulo'] = "Atividade";
-        $this->template->load('template','atividade/view_atividade',$data);
+        $this->template->load('template', 'atividade/view_atividade', $data);
         
+        $this->load->model('atividade_model', 'atividade');
+        $this->atividade->autoIncrement();
     }
-        public function consulta(){
+
+    
+    public function get_atividades() {
         $data['titulo'] = "Evento";
         $this->template->load('template', 'atividade/consultar_atividade', $data);
-    }  
+    }
+    
+    
+
 }

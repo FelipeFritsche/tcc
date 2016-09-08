@@ -35,12 +35,8 @@ class Evento extends CI_Controller {
         
         $this->template->load('template', 'evento/criar_evento', $data);        
     }
-    
-    
-    public function hello()
-    {
-        $data['titulo'] = 'Hello';
-        $data['mensagem'] = "Sou o action hello e estou no template 'template.php'";
-        $this->template->load('template', 'view_hello', $data);
-    }    
+    public function list_eventos() {
+        $data['titulo'] = "Atividades";
+        $this->template->load('template', 'evento/consultar_atividade', $data);
+    }   
 }
