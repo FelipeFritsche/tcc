@@ -72,11 +72,10 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </div>    
+                            </div>
                         </div>
                     </div>
                     <!-- /sidebar menu -->
-                    <?php $this->load->view('menuFooter'); ?>
                 </div>
                 <?php $this->load->view('topNavigation'); ?>
                 <div class="right_col" role="main">
