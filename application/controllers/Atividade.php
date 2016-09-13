@@ -19,10 +19,9 @@ class Atividade extends CI_Controller {
     public function index() {
         if ($this->input->post()) {
             $this->load->model('atividade_model', 'atividade');
-            $this->atividade->id = 2;
+            $this->atividade->idatividade = 2;
+            $this->atividade->idusuario = $this->session->id;
             $this->atividade->idevento = 1;
-            $this->atividade->idevento = 0;
-            $this->atividade->nome = $this->input->post('nome');
             $this->atividade->tipo = $this->input->post('tipo');
             $this->atividade->titulo = $this->input->post('titulo');
             $this->atividade->duracao = $this->input->post('duracao');

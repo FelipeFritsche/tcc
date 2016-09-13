@@ -2,10 +2,9 @@
 
 class Atividade_model extends CI_Model {
 
-    public $id;
+    public $idatividade;
     public $idevento;
-    public $idpalestrante;
-    public $nome;
+    public $idusuario;
     public $titulo;
     public $tipo;
     public $duracao;
@@ -39,4 +38,8 @@ class Atividade_model extends CI_Model {
         $this->db->delete('atividade', array('id' => $id));
     }
 
+    public function get_atividadesById($id) {
+        $query = $this->db->get('atividade');
+        return $query->result();
+    }
 }

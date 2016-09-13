@@ -6,15 +6,17 @@
  * and open the template in the editor.
  */
 
-class Atividade extends CI_Controller {
+class Home extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
     }
 
-    public function index() {
-        $data['titulo'] = "Home";
-        $this->template->load('template','home');
+    public function index() {    
+        $this->load->model('evento_model', 'evento');
+        $data['exibe']= $this->evento->getEventos($this->session->id);
+        $this->template->load('template', 'home');
+        
     }
 }
 ?>    

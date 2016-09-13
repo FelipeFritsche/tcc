@@ -30,11 +30,20 @@ class Evento_model extends CI_Model {
     $query = $this->db->get('evento');
     }
 
-    public function get_atividades() {
+    public function get_evetos() {
         $query = $this->db->get('evento');
         return $query->result();
     }
 
+    public function get_evetosById($id) {
+        $query=$this->db->select('*')
+                    ->from('evento')
+                    ->join('inscricao', 'evento.idevento = inscricao.idevento','inner')
+                    ->where('inscricao.idusuario', $id)
+                    ->get();
+        return $query->result();
+    }
+    
     function row_delete($id) {
         $this->db->delete('evento', array('id' => $id)); 
     }

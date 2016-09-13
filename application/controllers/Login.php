@@ -21,7 +21,7 @@ class Login extends CI_Controller {
                 //salva os dados na sessao
                 //redireciona para o controller principal
                 $this->session->set_userdata(array('id' => $usuario_login->idusuario, 'nome' => $usuario_login->nome));
-                redirect('atividade');
+                redirect('home');
             }
             else{
                 $data['msg'] = 'Usuário e/ou senha incorretos';
