@@ -27,7 +27,7 @@
         <link href="<?php echo base_url() ?>assets/vendors/select2/docs/_sass/vendor/bootstrap/_glyphicons.scss" rel="stylesheet">
     </head>
 
-    <body class="nav-md">
+    <body class="nav-md" heght="100%">
         <div class="container body">
             <div class="main_container">
                 <div class="col-md-3 left_col">
@@ -41,9 +41,9 @@
                                 <ul class="nav side-menu">
                                     <li><a><i class="fa fa-home"></i>Meus eventos<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="index.html">Dashboard</a></li>
-                                            <li><a href="index2.html">Dashboard2</a></li>
-                                            <li><a href="index3.html">Dashboard3</a></li>
+                                            <?php foreach($eventos as $item): ?>
+                                            <li><a href="#"><?php echo $item->titulo ?></a></li>
+                                            <?php endforeach ?>        
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Atividades <span class="fa fa-chevron-down"></span></a>
