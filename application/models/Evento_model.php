@@ -36,11 +36,7 @@ class Evento_model extends CI_Model {
     }
 
     public function get_evetosById($id) {
-        $query=$this->db->select('*')
-                    ->from('evento')
-                    ->join('inscricao', 'evento.idevento = inscricao.idevento','inner')
-                    ->where('inscricao.idusuario', $id)
-                    ->get();
+        $query = $this->db->query('select e.titulo,e.local,e.responsavel,i.tipoAcesso from evento e,inscricao i where e.idevento = i.idevento and i.idusuario ='.$id);
         return $query->result();
     }
     

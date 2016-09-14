@@ -23,6 +23,8 @@
         <link href="<?php echo base_url() ?>assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
         <!-- Custom Theme Style -->
         <link href="<?php echo base_url() ?>assets/custom.min.css" rel="stylesheet">
+        <!-- Glyphicons-->
+        <link href="<?php echo base_url() ?>assets/vendors/select2/docs/_sass/vendor/bootstrap/_glyphicons.scss" rel="stylesheet">
     </head>
 
     <body class="nav-md">

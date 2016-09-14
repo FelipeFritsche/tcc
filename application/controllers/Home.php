@@ -14,8 +14,8 @@ class Home extends CI_Controller {
 
     public function index() {    
         $this->load->model('evento_model', 'evento');
-        $data['exibe']= $this->evento->getEventos($this->session->id);
-        $this->template->load('template', 'home');
+        $data['eventos']= $this->evento->get_evetosById($this->session->id);
+        $this->template->load('template','home',$data);
         
     }
 }
