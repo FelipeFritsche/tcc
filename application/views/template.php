@@ -43,7 +43,8 @@
                                         <ul class="nav child_menu">
                                             <?php foreach($eventos as $item): ?>
                                             <li><a href="#"><?php echo $item->titulo ?></a></li>
-                                            <?php endforeach ?>        
+                                            <?php endforeach ?>   
+                                            
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Atividades <span class="fa fa-chevron-down"></span></a>
